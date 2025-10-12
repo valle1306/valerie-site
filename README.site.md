@@ -22,3 +22,7 @@ Notes
 
 - This repo uses Quartz v4 as the static site generator. See `quartz.config.ts` for configuration.
 - To deploy to GitHub Pages, build to a directory and push to `gh-pages` or use GitHub Actions.
+
+## GitHub Pages deployment
+
+This repo includes a GitHub Actions workflow at `.github/workflows/deploy.yml` that will build the site on Node 22 and publish the contents of `public/` to the `gh-pages` branch whenever you push to the `v4` branch. The action uses the built-in `GITHUB_TOKEN` so no additional secrets are required.

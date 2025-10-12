@@ -5,26 +5,25 @@ description: "Phan (Valerie) Le — biostatistics & computational neuroscience. 
 tags: [home, biostatistics, computational-neuroscience]
 ---
 
-# Phan Nguyen Huong Le
+# Phan (Valerie) Le
 
-I study biostatistics and computational neuroscience — building reproducible tools and statistical pipelines for analyzing neural and behavioral data. I work at the intersection of statistical modeling, machine learning, and neuroscience data systems.
+![Headshot](/static/images/headshot.jpg){: .avatar}
 
-## Quick links
+I build reproducible tools and statistical pipelines at the intersection of biostatistics, computational neuroscience, and machine learning. I'm interested in AI for healthcare, computational neuro, and translational work in pharmaceutical and clinical settings. I'm also a runner, gym-goer, and a devotee of matcha and other caffeinated drinks.
+
+Quick links:
 
 - [About](/about)
 - [Resume](/resume)
 - [Projects](/projects)
-- [Experience](/experience)
+- [Skills](/skills)
 
-## Selected projects
+Selected projects:
 
 - [Neural data analysis toolkit](/projects/neural-data-analysis) — pipelines and reproducible analyses for spike / imaging datasets.
 - [Biostatistics toolkit](/projects/biostats-toolkit) — R and Python packages for statistical modeling and reproducible reporting.
+- [Interactive R/Shiny app for multiple testing](/projects/shiny-app) — visualization and tools for graphical multiple testing procedures.
 
-## Contact
+Contact: hpl14@scarletmail.rutgers.edu — GitHub: https://github.com/valle1306
 
-- Email: your.email@example.com
-- GitHub: https://github.com/your-username
-- Twitter/X: @your_handle (optional)
-
-If you'd like, paste any specific project descriptions or dates and I'll update the pages with accurate details from your resumes.
+If you'd like edits to tone or content (shorter hero text, different hobbies phrasing, or to use a different image), tell me and I'll update it.
