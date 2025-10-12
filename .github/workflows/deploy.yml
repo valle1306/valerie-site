@@ -25,7 +25,7 @@ jobs:
         run: npm ci
 
       - name: Build site
-        run: npx quartz build -d docs
+        run: npx quartz build -d content
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4

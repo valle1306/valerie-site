@@ -1,8 +1,8 @@
 ---
 title: "Resume"
-title: "Resume"
 slug: "resume"
 description: "Curriculum vitae — Phan Nguyen Huong Le"
+---
 
 # Phan Nguyen Huong Le
 
