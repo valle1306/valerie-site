@@ -1,3 +1,57 @@
 @use "./base.scss";
 
 // put your custom CSS here!
+
+// Sticky header with navigation
+.page-header {
+  position: sticky !important;
+  top: 0;
+  background-color: var(--light);
+  z-index: 100;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--lightgray);
+  backdrop-filter: blur(8px);
+  background-color: rgba(248, 240, 255, 0.95);
+}
+
+// Navigation styling
+.page-header nav {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.page-header nav a {
+  color: var(--darkgray);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.page-header nav a:hover {
+  color: var(--secondary);
+  background-color: var(--highlight);
+}
+
+// Center the main content
+.center {
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+// Better image styling
+article img {
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+// Footer styling
+footer {
+  text-align: center;
+  padding: 2rem 0;
+  border-top: 1px solid var(--lightgray);
+  margin-top: 3rem;
+}

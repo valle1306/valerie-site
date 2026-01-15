@@ -6,9 +6,22 @@ import { i18n } from "../i18n"
 const PageTitle: QuartzComponent = ({ fileData, cfg, displayClass }: QuartzComponentProps) => {
   const title = cfg?.pageTitle ?? i18n(cfg.locale).propertyDefaults.title
   const baseDir = pathToRoot(fileData.slug!)
+  
+  // Split title into characters for animation
+  const chars = title.split('')
+  
   return (
     <h2 class={classNames(displayClass, "page-title")}>
-      <a href={baseDir}>{title}</a>
+      <a href={baseDir} class="animated-title">
+        {chars.map((char, i) => (
+          <span 
+            class="title-char" 
+            style={`animation-delay: ${i * 0.05}s`}
+          >
+            {char === ' ' ? '\u00A0' : char}
+          </span>
+        ))}
+      </a>
     </h2>
   )
 }
@@ -18,6 +31,45 @@ PageTitle.css = `
   font-size: 1.75rem;
   margin: 0;
   font-family: var(--titleFont);
+}
+
+.animated-title {
+  display: inline-flex;
+  overflow: hidden;
+}
+
+.title-char {
+  display: inline-block;
+  animation: flyIn 0.6s ease-out forwards;
+  opacity: 0;
+  transform: translateY(-20px) rotateX(-90deg);
+}
+
+@keyframes flyIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px) rotateX(-90deg);
+  }
+  60% {
+    transform: translateY(5px) rotateX(10deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotateX(0);
+  }
+}
+
+.animated-title:hover .title-char {
+  animation: wave 0.5s ease-in-out;
+}
+
+@keyframes wave {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
 }
 `
 
