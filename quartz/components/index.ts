@@ -24,6 +24,7 @@ import Comments from "./Comments"
 import Flex from "./Flex"
 import ConditionalRender from "./ConditionalRender"
 import LinksHeader from "./LinksHeader"
+import Chatbot from "./Chatbot"
 
 export {
   ArticleTitle,
@@ -52,4 +53,5 @@ export {
   Flex,
   ConditionalRender,
   LinksHeader,
+  Chatbot,
 }

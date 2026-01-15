@@ -10,7 +10,7 @@ export const sharedPageComponents: SharedLayout = {
     Component.LinksHeader(),
     Component.Darkmode(),
   ],
-  afterBody: [],
+  afterBody: [Component.Chatbot()],
   footer: Component.Footer({
     links: {
       Email: "mailto:hpl14@scarletmail.rutgers.edu",
