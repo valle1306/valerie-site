@@ -21,7 +21,7 @@ Recently completed: [Interactive R/Shiny app for clinical trial design](https://
 </div>
 <div style="flex: 0 0 300px;">
 
-![Headshot](/static/images/headshot.jpg)
+![Headshot](./static/images/headshot.jpg)
 
 </div>
 </div>
@@ -29,18 +29,18 @@ Recently completed: [Interactive R/Shiny app for clinical trial design](https://
 ---
 
 <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 2rem 0;">
-  <img src="/static/running-1.png" alt="Running" style="width: 100%; border-radius: 8px;">
-  <img src="/static/running-2.png" alt="Running" style="width: 100%; border-radius: 8px;">
-  <img src="/static/running-3.png" alt="Running" style="width: 100%; border-radius: 8px;">
+  <img src="./static/running-1.png" alt="Running" style="width: 100%; border-radius: 8px;">
+  <img src="./static/running-2.png" alt="Running" style="width: 100%; border-radius: 8px;">
+  <img src="./static/running-3.png" alt="Running" style="width: 100%; border-radius: 8px;">
 </div>
 
 Enjoy photos from my runs as you browse through:
 
-- my [Experience](/experience),
-- my [Projects](/projects),
-- and my [Resume](/resume).
+- my [Experience](./experience),
+- my [Projects](./projects),
+- and my [Resume](./resume).
 
-Lastly, talk to me about [running](https://www.strava.com/athletes/136970948) or [life](/life)!
+Lastly, talk to me about [running](https://www.strava.com/athletes/136970948) or [life](./life)!
 
 ---
 
