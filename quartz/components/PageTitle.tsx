@@ -5,14 +5,13 @@ import { i18n } from "../i18n"
 
 const PageTitle: QuartzComponent = ({ fileData, cfg, displayClass }: QuartzComponentProps) => {
   const title = cfg?.pageTitle ?? i18n(cfg.locale).propertyDefaults.title
-  const baseDir = pathToRoot(fileData.slug!)
   
   // Split title into characters for animation
   const chars = title.split('')
   
   return (
     <h2 class={classNames(displayClass, "page-title")}>
-      <a href={baseDir} class="animated-title">
+      <a href="/valerie-site/" class="animated-title">
         {chars.map((char, i) => (
           <span 
             class="title-char" 

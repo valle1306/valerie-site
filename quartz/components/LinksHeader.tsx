@@ -2,20 +2,19 @@ import { pathToRoot } from "../util/path"
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
 
 const links = [
-  { href: "", label: "Home" },
-  { href: "projects", label: "Projects" },
-  { href: "experience", label: "Experience" },
-  { href: "resume", label: "CV" },
-  { href: "life", label: "Life" },
+  { href: "/valerie-site/", label: "Home" },
+  { href: "/valerie-site/projects", label: "Projects" },
+  { href: "/valerie-site/experience", label: "Experience" },
+  { href: "/valerie-site/resume", label: "CV" },
+  { href: "/valerie-site/life", label: "Life" },
 ]
 
 export default (() => {
   const LinksHeader: QuartzComponent = ({ fileData, displayClass }: QuartzComponentProps) => {
-    const baseDir = pathToRoot(fileData.slug!)
     return (
       <nav class={`links-header ${displayClass ?? ""}`}>
         {links.map((link) => (
-          <a href={`${baseDir}/${link.href}`} class="nav-link">
+          <a href={link.href} class="nav-link">
             {link.label}
           </a>
         ))}
