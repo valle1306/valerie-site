@@ -3,7 +3,6 @@ import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } fro
 
 const links = [
   { href: "/valerie-site/", label: "Home" },
-  { href: "/valerie-site/about", label: "About" },
   { href: "/valerie-site/projects", label: "Projects" },
   { href: "/valerie-site/experience", label: "Experience" },
   { href: "/valerie-site/resume", label: "CV" },
@@ -41,9 +40,17 @@ export default (() => {
       font-size: 0.95rem;
     }
 
+    :root[saved-theme="dark"] .links-header .nav-link {
+      color: var(--light);
+    }
+
     .links-header .nav-link:hover {
       color: var(--secondary);
       background-color: var(--highlight);
+    }
+
+    :root[saved-theme="dark"] .links-header .nav-link:hover {
+      color: var(--tertiary);
     }
   `
 

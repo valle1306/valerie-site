@@ -16,12 +16,12 @@ const Chatbot: QuartzComponent = ({ cfg }: QuartzComponentProps) => {
       {/* Chat Window */}
       <div id="chat-window" class="chat-hidden">
         <div id="chat-header">
-          <span>💬 Ask Valerie's AI Assistant</span>
+          <span>Ask Valerie's Assistant</span>
           <button id="chat-close" aria-label="Close chat">×</button>
         </div>
         <div id="chat-messages">
           <div class="chat-message bot">
-            Hi! I'm Valerie's AI assistant. I can help you learn about her research, projects, and experience. What would you like to know?
+            Hi, I'm here to help you navigate Valerie's site. You can ask me about her projects, experience, skills, or where to find specific information. What would you like to know?
           </div>
         </div>
         <div id="chat-input-container">
@@ -391,11 +391,11 @@ Chatbot.afterDOMLoaded = `
     
     // === CONTACT QUERIES ===
     if (/contact|email|reach|phone|call|linkedin|github|connect/.test(q)) {
-      return \`📧 <b>Contact Valerie:</b><br>
-• Email: <a href="mailto:\${CONTACT_INFO.email}">\${CONTACT_INFO.email}</a><br>
-• Phone: \${CONTACT_INFO.phone}<br>
-• LinkedIn: <a href="https://www.\${CONTACT_INFO.linkedin}" target="_blank">\${CONTACT_INFO.linkedin}</a><br>
-• GitHub: <a href="https://\${CONTACT_INFO.github}" target="_blank">\${CONTACT_INFO.github}</a>\`;
+      return \`<b>Contact Valerie:</b><br>
+- Email: <a href="mailto:\${CONTACT_INFO.email}">\${CONTACT_INFO.email}</a><br>
+- Phone: \${CONTACT_INFO.phone}<br>
+- LinkedIn: <a href="https://www.\${CONTACT_INFO.linkedin}" target="_blank">\${CONTACT_INFO.linkedin}</a><br>
+- GitHub: <a href="https://\${CONTACT_INFO.github}" target="_blank">\${CONTACT_INFO.github}</a>\`;
     }
 
     // === PROJECT CATEGORY QUERIES ===
@@ -404,36 +404,36 @@ Chatbot.afterDOMLoaded = `
       if (/health|medical|clinic|brain|tumor|chop|bio/.test(q)) {
         conversationContext = 'healthcare_projects';
         const projects = PROJECTS.healthcare;
-        let response = '🏥 <b>Healthcare & Biomedical Projects:</b><br><br>';
+        let response = '<b>Healthcare & Biomedical Projects:</b><br><br>';
         projects.forEach((p, i) => {
-          response += \`<b>\${i+1}. \${p.name}</b>\${p.link ? ' <a href="https://'+p.link+'" target="_blank">🔗</a>' : ''}<br>\`;
+          response += \`<b>\${i+1}. \${p.name}</b>\${p.link ? ' <a href="https://'+p.link+'" target="_blank">[link]</a>' : ''}<br>\`;
           response += \`   \${p.type} | \${p.institution || p.company || ''}<br>\`;
           response += \`   \${p.description.substring(0, 100)}...<br><br>\`;
         });
-        response += 'Ask me about any specific project for more details!';
+        response += 'Ask me about any specific project for more details.';
         return response;
       }
       
       if (/finance|quant|trading|bank|money|jpmorgan|idx|real estate|valuation/.test(q)) {
         conversationContext = 'finance_projects';
         const projects = PROJECTS.finance;
-        let response = '💼 <b>Finance & Quantitative Projects:</b><br><br>';
+        let response = '<b>Finance & Quantitative Projects:</b><br><br>';
         projects.forEach((p, i) => {
           response += \`<b>\${i+1}. \${p.name}</b><br>\`;
           response += \`   \${p.company} | \${p.type}<br>\`;
           response += \`   \${p.description.substring(0, 100)}...<br><br>\`;
         });
-        response += 'Ask me about any specific project for more details!';
+        response += 'Ask me about any specific project for more details.';
         return response;
       }
       
       // General project query - ask for category
       conversationContext = 'asking_project_type';
-      return \`📂 <b>Valerie has projects in several areas:</b><br><br>
-🏥 <b>Healthcare/Biomedical</b> - brain tumor segmentation, clinical trials, uncertainty quantification<br>
-💼 <b>Finance/Quant</b> - real estate valuation, risk analytics, trading models<br>
-🔬 <b>Research</b> - causal inference, psychometrics, behavioral studies<br><br>
-Which area interests you? (just say "health", "finance", or "research")\`;
+      return \`<b>Valerie has projects in several areas:</b><br><br>
+<b>Healthcare/Biomedical</b> - brain tumor segmentation, clinical trials, uncertainty quantification<br>
+<b>Finance/Quant</b> - real estate valuation, risk analytics, trading models<br>
+<b>Research</b> - causal inference, psychometrics, behavioral studies<br><br>
+Which area interests you? Or visit the <a href="./projects">Projects page</a> for the full list.\`;
     }
 
     // === HANDLE FOLLOW-UP FOR PROJECT CATEGORY ===
@@ -449,7 +449,7 @@ Which area interests you? (just say "health", "finance", or "research")\`;
       if (/research|academic|study/.test(q)) {
         conversationContext = 'research_projects';
         const projects = PROJECTS.research;
-        let response = '🔬 <b>Academic Research Projects:</b><br><br>';
+        let response = '<b>Academic Research Projects:</b><br><br>';
         projects.forEach((p, i) => {
           response += \`<b>\${i+1}. \${p.name}</b><br>\`;
           response += \`   \${p.mentor || p.mentors} | \${p.period}<br>\`;
@@ -462,18 +462,18 @@ Which area interests you? (just say "health", "finance", or "research")\`;
     // === SPECIFIC PROJECT QUERIES ===
     if (/brain|tumor|chop|d3b|segment|mri|imaging/.test(q)) {
       const p = PROJECTS.healthcare.find(x => x.name.includes('Brain Tumor'));
-      return \`🧠 <b>\${p.name}</b><br><br>
+      return \`<b>\${p.name}</b><br><br>
 <b>Institution:</b> \${p.institution}<br>
 <b>Advisor:</b> \${p.advisor}<br>
 <b>Period:</b> \${p.period}<br><br>
-<b>What I do:</b><br>\${p.description}<br><br>
+<b>What she does:</b><br>\${p.description}<br><br>
 <b>Tech:</b> \${p.tech.join(', ')}<br>
 <b>Link:</b> <a href="https://\${p.link}" target="_blank">\${p.link}</a>\`;
     }
 
     if (/uncertainty|quantif|calibrat|gemma|moran|bayesian/.test(q)) {
       const p = PROJECTS.healthcare[0];
-      return \`📊 <b>\${p.name}</b><br><br>
+      return \`<b>\${p.name}</b><br><br>
 <b>Advisor:</b> \${p.advisor}<br>
 <b>Institution:</b> \${p.institution}<br>
 <b>Period:</b> \${p.period}<br><br>
@@ -483,7 +483,7 @@ Which area interests you? (just say "health", "finance", or "research")\`;
 
     if (/shiny|graphmtp|clinical trial|multiple test/.test(q)) {
       const p = PROJECTS.healthcare.find(x => x.name.includes('GraphMTP'));
-      return \`📈 <b>\${p.name}</b><br><br>
+      return \`<b>\${p.name}</b><br><br>
 <b>Advisors:</b> \${p.advisors}<br>
 <b>Period:</b> \${p.period}<br><br>
 <b>Description:</b> \${p.description}<br><br>
@@ -493,7 +493,7 @@ Which area interests you? (just say "health", "finance", or "research")\`;
 
     if (/proton|pulse|bms|bristol|charge variant|protein/.test(q)) {
       const p = PROJECTS.healthcare.find(x => x.name.includes('ProtonPulse'));
-      return \`⚡ <b>\${p.name}</b><br><br>
+      return \`<b>\${p.name}</b><br><br>
 <b>Context:</b> \${p.institution}<br><br>
 <b>Description:</b> \${p.description}<br><br>
 <b>Try it:</b> <a href="https://\${p.link}" target="_blank">\${p.link}</a><br>
@@ -502,57 +502,57 @@ Which area interests you? (just say "health", "finance", or "research")\`;
 
     if (/idx|real estate|home value|avm|valuation/.test(q)) {
       const p = PROJECTS.finance[0];
-      return \`🏠 <b>\${p.name}</b><br><br>
+      return \`<b>\${p.name}</b><br><br>
 <b>Company:</b> \${p.company}, \${p.location}<br>
 <b>Type:</b> \${p.type}<br><br>
-<b>What I built:</b> \${p.description}<br><br>
+<b>What she built:</b> \${p.description}<br><br>
 <b>Tech:</b> \${p.tech.join(', ')}\`;
     }
 
     if (/jpmorgan|jp morgan|risk|var|lstm|black.?scholes|quant/.test(q)) {
       const p = PROJECTS.finance[1];
-      return \`📉 <b>\${p.name}</b><br><br>
+      return \`<b>\${p.name}</b><br><br>
 <b>Company:</b> \${p.company}, \${p.location}<br>
 <b>Type:</b> \${p.type}<br><br>
-<b>What I built:</b> \${p.description}<br><br>
+<b>What she built:</b> \${p.description}<br><br>
 <b>Tech:</b> \${p.tech.join(', ')}\`;
     }
 
     // === EXPERIENCE QUERIES ===
     if (/experience|work history|job|intern|career|employ/.test(q)) {
       if (/current|now|present/.test(q)) {
-        let response = '👩‍💻 <b>Current Positions:</b><br><br>';
+        let response = '<b>Current Positions:</b><br><br>';
         EXPERIENCE.current.forEach(e => {
-          response += \`• <b>\${e.role}</b> @ \${e.org}<br>  \${e.period}<br><br>\`;
+          response += \`- <b>\${e.role}</b> at \${e.org}<br>  \${e.period}<br><br>\`;
         });
         return response;
       }
       
       if (/industry|company|intern/.test(q)) {
-        let response = '💼 <b>Industry Experience:</b><br><br>';
+        let response = '<b>Industry Experience:</b><br><br>';
         EXPERIENCE.industry.forEach(e => {
-          response += \`• <b>\${e.role}</b> @ \${e.org}<br>\`;
+          response += \`- <b>\${e.role}</b> at \${e.org}<br>\`;
         });
-        response += '<br>Ask about any specific role for details!';
+        response += '<br>Ask about any specific role for details, or visit the <a href="./experience">Experience page</a>.';
         return response;
       }
 
       // General experience
-      return \`📋 <b>Experience Summary:</b><br><br>
+      return \`<b>Experience Summary:</b><br><br>
 <b>Current (2024-2026):</b><br>
-• CHOP D3b Center - Imaging Data Analyst RA<br>
-• Rutgers - Uncertainty Quantification Research<br>
-• Rutgers - Clinical Trial Shiny App Development<br><br>
+- CHOP D3b Center - Imaging Data Analyst RA<br>
+- Rutgers - Uncertainty Quantification Research<br>
+- Rutgers - Clinical Trial Shiny App Development<br><br>
 <b>Industry:</b><br>
-• Bristol Myers Squibb Challenge - Bioinformatics<br>
-• IDX Exchange, NYC - Data Science Intern<br>
-• JPMorgan Chase, NYC - Quant Research Mentee<br><br>
-Ask about "healthcare experience", "finance experience", or any specific role!\`;
+- Bristol Myers Squibb Challenge - Bioinformatics<br>
+- IDX Exchange, NYC - Data Science Intern<br>
+- JPMorgan Chase, NYC - Quant Research Mentee<br><br>
+For full details, visit the <a href="./experience">Experience page</a>.\`;
     }
 
     // === EDUCATION ===
     if (/education|degree|school|study|rutgers|master|undergrad|major/.test(q)) {
-      return \`🎓 <b>Education:</b><br><br>
+      return \`<b>Education:</b><br><br>
 <b>M.S. Statistics - Data Science</b><br>
 Rutgers University | 2024 - Present<br><br>
 <b>B.A.Sc. Biomathematics</b><br>
@@ -562,7 +562,7 @@ Rutgers University | Graduated 2024<br><br>
 
     // === SKILLS & TECH ===
     if (/skill|tech|tool|language|python|r\\b|programming|stack/.test(q)) {
-      return \`🛠️ <b>Technical Skills:</b><br><br>
+      return \`<b>Technical Skills:</b><br><br>
 <b>Languages:</b> Python, R, SQL, MATLAB<br>
 <b>ML/DL:</b> PyTorch, TensorFlow, XGBoost, scikit-learn<br>
 <b>Data:</b> Pandas, NumPy, Tableau, Streamlit, Shiny<br>
@@ -573,77 +573,78 @@ Rutgers University | Graduated 2024<br><br>
 
     // === CV/RESUME ===
     if (/cv|resume|download|pdf/.test(q)) {
-      return \`📄 <b>Download Valerie's CV:</b><br><br>
+      return \`<b>Download Valerie's CV:</b><br><br>
 Visit the <a href="./resume">CV page</a> to download:<br>
-• Academic CV (PDF)<br>
-• Industry/Masters CV (PDF)<br><br>
-Or view detailed experience on the <a href="./experience">Experience page</a>!\`;
+- Academic CV (PDF)<br>
+- Industry/Masters CV (PDF)<br><br>
+Or view detailed experience on the <a href="./experience">Experience page</a>.\`;
     }
 
     // === HOBBIES/LIFE ===
     if (/hobby|hobbies|run|marathon|personal|life|fun|free time|outside work|knit|coffee|matcha/.test(q)) {
-      return \`🏃‍♀️ <b>Life & Hobbies:</b><br><br>
-<b>Running:</b> Training for Asbury Half Marathon & Flying Pig Marathon! Follow on <a href="https://\${CONTACT_INFO.strava}" target="_blank">Strava</a><br><br>
+      return \`<b>Life & Hobbies:</b><br><br>
+<b>Running:</b> Training for Asbury Half Marathon & Flying Pig Marathon. Follow on <a href="https://\${CONTACT_INFO.strava}" target="_blank">Strava</a><br><br>
 <b>Other interests:</b><br>
-• Knitting 🧶<br>
-• Strength training 💪<br>
-• Coffee & matcha exploration ☕<br><br>
-Check out the <a href="./life">Life page</a> for photos and more!\`;
+- Knitting<br>
+- Strength training<br>
+- Coffee & matcha exploration<br><br>
+Check out the <a href="./life">Life page</a> for photos and more.\`;
     }
 
     // === NAVIGATION ===
     if (/page|navigate|where|find|site|menu/.test(q)) {
-      return \`🗺️ <b>Site Navigation:</b><br><br>
-• <a href="./">Home</a> - Overview & intro<br>
-• <a href="./projects">Projects</a> - All research & work<br>
-• <a href="./experience">Experience</a> - Full work history<br>
-• <a href="./resume">CV</a> - Downloadable resumes<br>
-• <a href="./life">Life</a> - Hobbies & personal\`;
+      return \`<b>Site Navigation:</b><br><br>
+- <a href="./">Home</a> - Overview & intro<br>
+- <a href="./projects">Projects</a> - All research & work<br>
+- <a href="./experience">Experience</a> - Full work history<br>
+- <a href="./resume">CV</a> - Downloadable resumes<br>
+- <a href="./life">Life</a> - Hobbies & personal\`;
     }
 
     // === GREETINGS ===
     if (/^(hi|hello|hey|yo|sup|greetings|howdy)/.test(q)) {
-      return \`👋 Hi there! I'm Valerie's AI assistant. I can help you with:<br><br>
-• 📂 <b>Projects</b> - healthcare, finance, or research work<br>
-• 💼 <b>Experience</b> - current roles, industry, teaching<br>
-• 📧 <b>Contact</b> - email, phone, LinkedIn, GitHub<br>
-• 🎓 <b>Education</b> - degrees and background<br>
-• 🏃 <b>Personal</b> - hobbies and interests<br><br>
+      return \`Hi there. I can help you navigate this site and learn about Valerie. Try asking about:<br><br>
+- <b>Projects</b> - healthcare, finance, or research work<br>
+- <b>Experience</b> - current roles, industry, teaching<br>
+- <b>Contact</b> - email, phone, LinkedIn, GitHub<br>
+- <b>Education</b> - degrees and background<br>
+- <b>Personal</b> - hobbies and interests<br><br>
 What would you like to know?\`;
     }
 
     // === RESEARCH INTERESTS ===
     if (/research|interest|focus|speciali|area/.test(q)) {
-      return \`🔬 <b>Research Interests:</b><br><br>
-• Uncertainty quantification & probabilistic modeling<br>
-• Computational neuroscience<br>
-• Biostatistics & causal inference<br>
-• Machine learning for healthcare<br>
-• Reproducible data science workflows<br><br>
+      return \`<b>Research Interests:</b><br><br>
+- Uncertainty quantification & probabilistic modeling<br>
+- Computational neuroscience<br>
+- Biostatistics & causal inference<br>
+- Machine learning for healthcare<br>
+- Reproducible data science workflows<br><br>
 Currently working on: <b>Uncertainty Quantification for Biomedical Classification</b> with Dr. Gemma Moran and <b>Pediatric Brain Tumor Segmentation</b> at CHOP D3b Center.\`;
     }
 
     // === DEPLOYED APPS ===
     if (/deploy|live|app|demo|try|link/.test(q)) {
-      return \`🚀 <b>Live Deployed Apps:</b><br><br>
-1️⃣ <b>GraphMTP Shiny App</b> - Clinical trial design<br>
-   <a href="https://oncotrialdesign.shinyapps.io/graphMTP/" target="_blank">oncotrialdesign.shinyapps.io/graphMTP/</a><br><br>
-2️⃣ <b>ProtonPulse</b> - Protein charge variants<br>
-   <a href="https://protonpulse.streamlit.app/" target="_blank">protonpulse.streamlit.app/</a>\`;
+      return \`<b>Live Deployed Apps:</b><br><br>
+<b>1. GraphMTP Shiny App</b> - Clinical trial design<br>
+<a href="https://oncotrialdesign.shinyapps.io/graphMTP/" target="_blank">oncotrialdesign.shinyapps.io/graphMTP/</a><br><br>
+<b>2. ProtonPulse</b> - Protein charge variants<br>
+<a href="https://protonpulse.streamlit.app/" target="_blank">protonpulse.streamlit.app/</a>\`;
     }
 
     // === DEFAULT FALLBACK ===
     conversationContext = null;
     return \`I'm not sure I understood that. Here's what I can help with:<br><br>
-• <b>"projects"</b> - See work by category (health/finance/research)<br>
-• <b>"experience"</b> - Work history and roles<br>
-• <b>"contact"</b> - Email, phone, LinkedIn<br>
-• <b>"skills"</b> - Technical abilities<br>
-• <b>"education"</b> - Degrees and background<br>
-• Or ask about a specific project like "brain tumor" or "JPMorgan"!\`;
+- <b>"projects"</b> - See work by category<br>
+- <b>"experience"</b> - Work history and roles<br>
+- <b>"contact"</b> - Email, phone, LinkedIn<br>
+- <b>"skills"</b> - Technical abilities<br>
+- <b>"navigate"</b> - Site pages overview<br><br>
+Or ask about a specific project like "brain tumor" or "JPMorgan".\`;
   }
 
   let chatOpen = false;
+  let hasAutoOpened = false;
 
   function toggleChat() {
     chatOpen = !chatOpen;
@@ -656,6 +657,19 @@ Currently working on: <b>Uncertainty Quantification for Biomedical Classificatio
     } else {
       chatWindow.classList.add('chat-hidden');
     }
+  }
+
+  // Auto-open chat on first visit
+  function autoOpenChat() {
+    if (hasAutoOpened) return;
+    const hasVisited = sessionStorage.getItem('chatOpened');
+    if (!hasVisited) {
+      setTimeout(() => {
+        toggleChat();
+        sessionStorage.setItem('chatOpened', 'true');
+      }, 1500);
+    }
+    hasAutoOpened = true;
   }
 
   function addMessage(text, isUser) {
@@ -712,6 +726,9 @@ Currently working on: <b>Uncertainty Quantification for Biomedical Classificatio
   if (closeBtn) closeBtn.addEventListener('click', toggleChat);
   if (sendBtn) sendBtn.addEventListener('click', sendMessage);
   if (chatInput) chatInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') sendMessage(); });
+
+  // Auto-open chat on first visit to the site
+  autoOpenChat();
 `
 
 export default (() => Chatbot) satisfies QuartzComponentConstructor

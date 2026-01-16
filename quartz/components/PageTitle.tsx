@@ -32,6 +32,15 @@ PageTitle.css = `
   font-family: var(--titleFont);
 }
 
+.page-title a {
+  color: var(--dark);
+  text-decoration: none;
+}
+
+:root[saved-theme="dark"] .page-title a {
+  color: var(--light);
+}
+
 .animated-title {
   display: inline-flex;
   overflow: hidden;
@@ -42,6 +51,11 @@ PageTitle.css = `
   animation: flyIn 0.6s ease-out forwards;
   opacity: 0;
   transform: translateY(-20px) rotateX(-90deg);
+  color: var(--dark);
+}
+
+:root[saved-theme="dark"] .title-char {
+  color: var(--light);
 }
 
 @keyframes flyIn {

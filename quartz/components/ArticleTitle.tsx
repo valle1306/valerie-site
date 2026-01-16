@@ -51,60 +51,79 @@ const ArticleTitle: QuartzComponent = ({ fileData, displayClass }: QuartzCompone
 ArticleTitle.css = `
 .article-title {
   margin: 2rem 0 0 0;
+  text-align: center;
+  color: var(--dark);
 }
 
-/* Home page title - "Valerie Le" - bounce fly in */
+:root[saved-theme="dark"] .article-title {
+  color: var(--light);
+}
+
+/* Home page title - "Phan Nguyen Huong Le" - slide from right */
 .article-title.home-title {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   margin-bottom: 0.5rem;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  overflow: hidden;
 }
 
 .article-title.home-title .title-char {
   display: inline-block;
-  animation: titleFlyIn 0.6s ease-out forwards;
+  animation: slideFromRight 0.5s ease-out forwards;
   opacity: 0;
-  transform: translateY(-30px) scale(0.8);
+  transform: translateX(50px);
+  color: var(--dark);
 }
 
-@keyframes titleFlyIn {
+:root[saved-theme="dark"] .article-title.home-title .title-char {
+  color: var(--light);
+}
+
+@keyframes slideFromRight {
   0% {
     opacity: 0;
-    transform: translateY(-30px) scale(0.8);
-  }
-  60% {
-    transform: translateY(5px) scale(1.05);
+    transform: translateX(50px);
   }
   100% {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: translateX(0);
   }
 }
 
 .article-title.home-title:hover .title-char {
-  animation: titleWave 0.5s ease-in-out;
+  animation: titleGlow 0.6s ease-in-out;
   animation-fill-mode: forwards;
 }
 
-@keyframes titleWave {
+@keyframes titleGlow {
   0%, 100% {
-    transform: translateY(0) rotate(0deg);
-    color: var(--dark);
+    text-shadow: none;
   }
-  25% {
-    transform: translateY(-8px) rotate(-3deg);
+  50% {
     color: var(--secondary);
-  }
-  75% {
-    transform: translateY(3px) rotate(2deg);
-    color: var(--tertiary);
+    text-shadow: 0 0 8px rgba(155, 107, 158, 0.4);
   }
 }
 
-/* About page title - "Phan Nguyen Huong Le" - slide from right */
+:root[saved-theme="dark"] .article-title.home-title:hover .title-char {
+  animation: titleGlowDark 0.6s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes titleGlowDark {
+  0%, 100% {
+    text-shadow: none;
+  }
+  50% {
+    color: var(--tertiary);
+    text-shadow: 0 0 8px rgba(132, 165, 157, 0.5);
+  }
+}
+
+/* About page title - same style as home */
 .article-title.about-title {
   text-align: center;
   font-size: 2.2rem;
@@ -120,17 +139,11 @@ ArticleTitle.css = `
   animation: slideFromRight 0.5s ease-out forwards;
   opacity: 0;
   transform: translateX(50px);
+  color: var(--dark);
 }
 
-@keyframes slideFromRight {
-  0% {
-    opacity: 0;
-    transform: translateX(50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
+:root[saved-theme="dark"] .article-title.about-title .title-char-slide {
+  color: var(--light);
 }
 
 .article-title.about-title:hover .title-char-slide {
@@ -138,15 +151,9 @@ ArticleTitle.css = `
   animation-fill-mode: forwards;
 }
 
-@keyframes titleGlow {
-  0%, 100% {
-    color: var(--dark);
-    text-shadow: none;
-  }
-  50% {
-    color: var(--secondary);
-    text-shadow: 0 0 8px rgba(155, 107, 158, 0.4);
-  }
+:root[saved-theme="dark"] .article-title.about-title:hover .title-char-slide {
+  animation: titleGlowDark 0.6s ease-in-out;
+  animation-fill-mode: forwards;
 }
 `
 
