@@ -3,6 +3,7 @@ import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } fro
 
 const links = [
   { href: "/valerie-site/", label: "Home" },
+  { href: "/valerie-site/about", label: "About" },
   { href: "/valerie-site/projects", label: "Projects" },
   { href: "/valerie-site/experience", label: "Experience" },
   { href: "/valerie-site/resume", label: "CV" },

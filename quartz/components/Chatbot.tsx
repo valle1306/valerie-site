@@ -88,6 +88,12 @@ Chatbot.css = `
     border: 1px solid var(--lightgray);
   }
 
+  :root[saved-theme="dark"] #chat-window {
+    background: var(--dark);
+    border-color: var(--gray);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  }
+
   #chat-window.chat-hidden {
     display: none;
   }
@@ -130,10 +136,15 @@ Chatbot.css = `
   }
 
   .chat-message.bot {
-    background: var(--lightgray);
-    color: var(--darkgray);
+    background: rgba(155, 107, 158, 0.15);
+    color: var(--dark);
     align-self: flex-start;
     border-bottom-left-radius: 4px;
+  }
+
+  :root[saved-theme="dark"] .chat-message.bot {
+    background: rgba(155, 107, 158, 0.25);
+    color: var(--light);
   }
 
   .chat-message.user {
@@ -144,8 +155,12 @@ Chatbot.css = `
   }
 
   .chat-message.typing {
-    background: var(--lightgray);
+    background: rgba(155, 107, 158, 0.15);
     color: var(--gray);
+  }
+
+  :root[saved-theme="dark"] .chat-message.typing {
+    background: rgba(155, 107, 158, 0.25);
   }
 
   .chat-message a {
@@ -157,12 +172,21 @@ Chatbot.css = `
     color: white;
   }
 
+  :root[saved-theme="dark"] .chat-message.bot a {
+    color: var(--tertiary);
+  }
+
   #chat-input-container {
     display: flex;
     padding: 12px;
     gap: 8px;
     border-top: 1px solid var(--lightgray);
     background: var(--light);
+  }
+
+  :root[saved-theme="dark"] #chat-input-container {
+    background: var(--dark);
+    border-top-color: var(--gray);
   }
 
   #chat-input {
@@ -173,6 +197,18 @@ Chatbot.css = `
     font-size: 14px;
     outline: none;
     transition: border-color 0.2s;
+    background: var(--light);
+    color: var(--dark);
+  }
+
+  :root[saved-theme="dark"] #chat-input {
+    background: var(--darkgray);
+    border-color: var(--gray);
+    color: var(--light);
+  }
+
+  :root[saved-theme="dark"] #chat-input::placeholder {
+    color: var(--gray);
   }
 
   #chat-input:focus {

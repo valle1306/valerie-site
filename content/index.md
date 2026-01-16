@@ -1,27 +1,104 @@
 ﻿---
-title: "Phan Nguyen Huong Le"
+title: "Valerie Le"
 slug: "index"
-description: "Phan (Valerie) Le  biostatistics & computational neuroscience"
+description: "Valerie Le — biostatistics, data science, and a few too many interests"
 ---
 
-<div style="display: flex; align-items: flex-start; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap;">
-<div style="flex: 1; min-width: 300px;">
+<style>
+.hero-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 2.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+.hero-text {
+  flex: 1;
+  min-width: 320px;
+}
+.hero-image-wrapper {
+  flex: 0 0 300px;
+  position: relative;
+}
+.hero-image-wrapper img {
+  width: 100%;
+  border-radius: 12px;
+  transition: opacity 0.4s ease;
+  box-shadow: 0 4px 20px rgba(155, 107, 158, 0.2);
+}
+.hero-image-wrapper .funny-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+.hero-image-wrapper:hover .main-img {
+  opacity: 0;
+}
+.hero-image-wrapper:hover .funny-img {
+  opacity: 1;
+}
+.hover-hint {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--gray);
+  text-align: center;
+  margin-top: 0.5rem;
+}
+.keywords {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: rgba(155, 107, 158, 0.08);
+  border-radius: 8px;
+  border-left: 3px solid var(--secondary);
+}
+.recent-work {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--gray);
+  margin-top: 1rem;
+  padding-top: 0.5rem;
+}
+.formal-bio-link {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--lightgray);
+}
+</style>
 
-I am a master's student in Statistics - Data Science at Rutgers University. Currently, I am working on:
+<div class="hero-container">
+<div class="hero-text">
 
-- An **uncertainty quantification project for biomedical classification** with [Dr. Gemma Moran](https://www.gemma-moran.com/)
-- **Deep learning pipelines for pediatric brain tumor segmentation** as an Imaging Data Analyst RA at [CHOP (Children's Hospital of Philadelphia)](https://www.chop.edu/) at the [D3b Center](https://d3b.center/) under [Dr. Anahita Fathi Kazerooni](https://d3b.center/team-members/anahita-fathi-kazerooni/)
+I started out convinced I was going to become a doctor (my mom was very certain of it — thanks, mom), until mathematics and code quietly ruined that plan in the best possible way. Somewhere between biomathematics classes at Rutgers, late-night Jupyter notebooks, and a few too many research rabbit holes, I realized I was more interested in understanding how models think than memorizing what cells do.
 
-I study the intersection of biostatistics, computational neuroscience, and machine learning, with particular interest in uncertainty quantification, probabilistic modeling, and computational approaches to learning, decision-making, and cognition.
+These days, I'm a **master's student in Statistics and Data Science at Rutgers University**, working at the intersection of biostatistics, machine learning, and computational neuroscience *(another girl with too many interests, iykyk)*. I spend my time building uncertainty-aware models for biomedical classification, developing deep learning pipelines for pediatric brain tumor segmentation at CHOP, and trying to make complex statistical tools usable by people who don't want to read a 40-page methods section.
 
-Recently completed: [Interactive R/Shiny app for clinical trial design](https://oncotrialdesign.shinyapps.io/graphMTP/) with Dr. Han Zhang and [Dr. Philip He](https://www.linkedin.com/in/philip-he-6b26a5a1), and [Proton Pulse](https://protonpulse.streamlit.app/) for the Bristol Myers Squibb Challenge. I completed my B.A.Sc. in Biomathematics at Rutgers, working on psychometric scale evaluation and behavioral intervention research. I have worked in industry as a Data Science Intern at IDX Exchange and as a Quantitative Research Mentee at JPMorgan Chase.
+Along the way, I've wandered through psychometrics, survival modeling, financial research at JPMorgan, and more R Shiny apps than I care to admit. When I'm not thinking about calibration curves or Monte Carlo uncertainty, you'll probably find me training for a marathon, lifting at the gym, trying to claim my title as Catan's queen (and any other board game I can get my hands on), or convincing myself that knitting patterns are just another kind of algorithm.
 
-**Key interests:** biostatistics, computational neuroscience, uncertainty quantification, causal inference, machine learning for healthcare
+<div class="keywords">
+
+**Key interests:** biostatistics · computational neuroscience · uncertainty quantification · causal inference · machine learning for healthcare
 
 </div>
-<div style="flex: 0 0 300px;">
 
-![Headshot](./static/images/headshot.jpg)
+<div class="recent-work">
+
+*Recent work: [R/Shiny app for clinical trial design](https://oncotrialdesign.shinyapps.io/graphMTP/) · [ProtonPulse](https://protonpulse.streamlit.app/) for Bristol Myers Squibb · Brain tumor segmentation at [CHOP D3b](https://d3b.center/)*
+
+</div>
+
+<div class="formal-bio-link">
+
+📄 *Looking for something more formal? Here's my [professional bio](./about).*
+
+</div>
+
+</div>
+<div class="hero-image-wrapper">
+
+<img src="./static/funny(1).jpeg" alt="Valerie being silly" class="main-img">
+<img src="./static/funny(2).jpeg" alt="Valerie being extra silly" class="funny-img">
+<p class="hover-hint">✨ hover for a surprise ✨</p>
 
 </div>
 </div>
