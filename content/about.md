@@ -1,52 +1,75 @@
 ﻿---
-title: "About"
+title: "Phan Nguyen Huong Le"
 slug: "about"
-description: "About Phan Nguyen Huong Le  computational neuroscience & biostatistics"
+description: "Phan (Valerie) Le — biostatistics & computational neuroscience"
 ---
 
-# About
+<style>
+.bio-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+.bio-text {
+  flex: 1;
+  min-width: 300px;
+}
+.bio-image {
+  flex: 0 0 280px;
+}
+.bio-image img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(155, 107, 158, 0.2);
+}
+.keywords {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: rgba(155, 107, 158, 0.08);
+  border-radius: 8px;
+  border-left: 3px solid var(--secondary);
+}
+.recent-work {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--gray);
+  margin-top: 1rem;
+}
+</style>
 
-I'm Phan Nguyen Huong Le (Valerie). I build reproducible statistical tools and data pipelines that help bridge experiments and theory in neuroscience and healthcare. My work lives at the intersection of biostatistics, machine learning, and systems for reproducible analysis: I care about principled models, clear code, and workflows that let scientific teams scale analyses without losing interpretability.
+<div class="bio-container">
+<div class="bio-text">
 
-My research interests focus on **uncertainty quantification, probabilistic modeling, and computational approaches to learning, decision-making, and cognition**. I'm particularly drawn to problems where statistical rigor meets real-world impactwhether that's improving clinical decision support, understanding neural dynamics, or building tools that make complex analyses more accessible.
+Valerie Le is a master's student in Statistics - Data Science at Rutgers University. She studies the intersection of **biostatistics, computational neuroscience, and machine learning**, with particular interest in uncertainty quantification, probabilistic modeling, and computational approaches to learning, decision-making, and cognition.
 
-During my master's training at Rutgers, I've focused on preprocessing and statistical analyses for neural data, developing code and documentation to make experiments more reproducible and analyses more robust. I enjoy translating messy, high-dimensional recordings into concise results  whether that means a defensible model, a visualization that clarifies a phenomenon, or a pipeline that repeatedly reproduces a result across datasets.
+Previously, she completed her B.A.Sc. in Biomathematics at Rutgers, working on psychometric scale evaluation and behavioral intervention research. She has worked in industry as a Data Science Intern at IDX Exchange and as a Quantitative Research Mentee at JPMorgan Chase.
 
-## Current work
+Currently, she is working on:
 
-I'm currently working on an **uncertainty quantification project for biomedical classification** with [Dr. Gemma Moran](https://www.gemma-moran.com/) at Rutgers, developing probabilistic models and calibration methods for clinical prediction systems.
+- An **uncertainty quantification project for biomedical classification** with [Dr. Gemma Moran](https://www.gemma-moran.com/)
+- **Deep learning pipelines for pediatric brain tumor segmentation** as an Imaging Data Analyst RA at [CHOP (Children's Hospital of Philadelphia)](https://www.chop.edu/) at the [D3b Center](https://d3b.center/) under [Dr. Anahita Fathi Kazerooni](https://d3b.center/team-members/anahita-fathi-kazerooni/)
+<div class="keywords">
 
-I also work as an **Imaging Data Analyst RA at CHOP (Children's Hospital of Philadelphia)** at the [D3b Center](https://d3b.center/) under [Dr. Anahita Fathi Kazerooni](https://d3b.center/team-members/anahita-fathi-kazerooni/), where I develop deep learning pipelines for pediatric brain tumor segmentation using nnU-Net v2 on HPC clusters. I implement uncertainty quantification methods like Monte Carlo Dropout to support clinical quality assurance.
+**Key interests:** biostatistics · computational neuroscience · uncertainty quantification · causal inference · machine learning for healthcare
 
-Recently completed: **Interactive R/Shiny applications for clinical trial design** under Dr. Han Zhang and Dr. Philip He (feature complete and deployed), and the **Streamlit-based proton pulse app** for the Bristol Myers Squibb Challenge (deployed).
+</div>
 
-## Research interests
+<div class="recent-work">
 
-- **Computational neuroscience**: neural coding, dynamics, population analyses
-- **Biostatistics and causal inference**: hierarchical / Bayesian modeling, treatment effect estimation
-- **Uncertainty quantification**: probabilistic modeling, prediction intervals, calibration
-- **Reproducible workflows**: Docker, CI/CD, literate programming
-- **Machine learning for healthcare**: interpretability, fairness, and clinical translation
-- **Data visualization and explainable ML**
+*Recently completed: [Interactive R/Shiny app for clinical trial design](https://oncotrialdesign.shinyapps.io/graphMTP/) with Dr. Han Zhang and [Dr. Philip He](https://www.linkedin.com/in/philip-he-6b26a5a1), and [Proton Pulse](https://protonpulse.streamlit.app/) for the Bristol Myers Squibb Challenge.*
 
-## Background
+</div>
 
-Before focusing on computational work, I gained hands-on research experience in clinical psychology labs, where I conducted participant assessments, processed physiological data (HRV/PRV), and supported smoking cessation and stress intervention studies. This translational background continues to inform how I think about bridging methodological rigor with practical application.
+</div>
+<div class="bio-image">
 
-I've also worked in industry as a **Data Science Intern at IDX Exchange**, where I built home valuation models and market dashboards, and as a **Quantitative Research Mentee at JPMorgan Chase**, where I developed pricing models and risk analytics.
+![Headshot](./static/images/headshot.jpg)
 
-## Teaching & community
+</div>
+</div>
 
-I'm passionate about making statistics and data science more accessible. I've served as a Learning Assistant for Calculus II and as a Grader for statistics courses at Rutgers. I also led translation efforts for Goc Tam Ly Hoc, a psychology education platform in Vietnam, making psychological science accessible to Vietnamese-speaking audiences.
+---
 
-Outside of research and work, I'm an Orientation Leader at Rutgers, active in Data Science and Quantitative Finance clubs, and enjoy running, strength training, and exploring coffee shops.
-
-If you're interested in collaboration, open-source tooling, or data for reproducible neuroscience/biostatistics, I'd love to talk.
-
-## Contact & links
-
-- **Email**: <a href="mailto:hpl14@scarletmail.rutgers.edu">hpl14@scarletmail.rutgers.edu</a>
-- **Phone**: 715-440-1726
-- **LinkedIn**: [linkedin.com/in/hpl14](https://www.linkedin.com/in/hpl14)
-- **GitHub**: [github.com/valle1306](https://github.com/valle1306)
-- **CV**: [Download](/resume)
+<a href="mailto:hpl14@scarletmail.rutgers.edu">Email</a> | <a href="https://github.com/valle1306">GitHub</a> | <a href="https://www.linkedin.com/in/hpl14">LinkedIn</a> | <a href="https://www.strava.com/athletes/136970948">Strava</a>

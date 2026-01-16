@@ -96,8 +96,8 @@ Along the way, I've wandered through psychometrics, survival modeling, financial
 </div>
 <div class="hero-image-wrapper">
 
-<img src="./static/funny(1).jpeg" alt="Valerie being silly" class="main-img">
-<img src="./static/funny(2).jpeg" alt="Valerie being extra silly" class="funny-img">
+<img src="./static/images/funny1.jpg" alt="Valerie being silly" class="main-img">
+<img src="./static/images/funny2.jpg" alt="Valerie being extra silly" class="funny-img">
 <p class="hover-hint">✨ hover for a surprise ✨</p>
 
 </div>
