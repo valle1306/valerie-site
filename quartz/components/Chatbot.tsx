@@ -644,7 +644,6 @@ Or ask about a specific project like "brain tumor" or "JPMorgan".\`;
   }
 
   let chatOpen = false;
-  let hasAutoOpened = false;
 
   function toggleChat() {
     chatOpen = !chatOpen;
@@ -659,17 +658,18 @@ Or ask about a specific project like "brain tumor" or "JPMorgan".\`;
     }
   }
 
-  // Auto-open chat on first visit
-  function autoOpenChat() {
-    if (hasAutoOpened) return;
-    const hasVisited = sessionStorage.getItem('chatOpened');
-    if (!hasVisited) {
+  function openChatOnFirstVisit() {
+    // Check if this is user's first visit this session
+    if (!sessionStorage.getItem('chatAutoOpened')) {
       setTimeout(() => {
-        toggleChat();
-        sessionStorage.setItem('chatOpened', 'true');
-      }, 1500);
+        const chatWindow = document.getElementById('chat-window');
+        if (chatWindow && chatWindow.classList.contains('chat-hidden')) {
+          chatOpen = true;
+          chatWindow.classList.remove('chat-hidden');
+          sessionStorage.setItem('chatAutoOpened', 'true');
+        }
+      }, 2000);
     }
-    hasAutoOpened = true;
   }
 
   function addMessage(text, isUser) {
@@ -727,8 +727,8 @@ Or ask about a specific project like "brain tumor" or "JPMorgan".\`;
   if (sendBtn) sendBtn.addEventListener('click', sendMessage);
   if (chatInput) chatInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') sendMessage(); });
 
-  // Auto-open chat on first visit to the site
-  autoOpenChat();
+  // Auto-open chat on first visit
+  openChatOnFirstVisit();
 `
 
 export default (() => Chatbot) satisfies QuartzComponentConstructor

@@ -5,39 +5,36 @@ description: "Phan (Valerie) Le — biostatistics, data science, and a few too m
 ---
 
 <style>
-.intro-section {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto 2rem auto;
+.bio-section {
+  margin-bottom: 2rem;
 }
-.headshot-container {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 1.5rem;
+.bio-section::after {
+  content: "";
+  display: table;
+  clear: both;
 }
-.headshot-wrapper {
+.float-image {
+  float: right;
+  width: 280px;
+  margin: 0 0 1rem 1.5rem;
   position: relative;
-  width: 200px;
-  height: 200px;
 }
-.headshot-wrapper img {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  object-fit: cover;
+.float-image img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(155, 107, 158, 0.2);
   transition: opacity 0.4s ease;
-  box-shadow: 0 4px 20px rgba(155, 107, 158, 0.25);
 }
-.headshot-wrapper .funny-img {
+.float-image .funny-img {
   position: absolute;
   top: 0;
   left: 0;
   opacity: 0;
 }
-.headshot-wrapper:hover .main-img {
+.float-image:hover .main-img {
   opacity: 0;
 }
-.headshot-wrapper:hover .funny-img {
+.float-image:hover .funny-img {
   opacity: 1;
 }
 .hover-hint {
@@ -45,13 +42,7 @@ description: "Phan (Valerie) Le — biostatistics, data science, and a few too m
   font-style: italic;
   color: var(--gray);
   text-align: center;
-  margin-top: 0.5rem;
-}
-.fun-bio {
-  font-size: 1rem;
-  line-height: 1.7;
-  color: var(--darkgray);
-  margin-bottom: 1.5rem;
+  margin-top: 0.3rem;
 }
 .keywords-box {
   display: inline-block;
@@ -60,10 +51,11 @@ description: "Phan (Valerie) Le — biostatistics, data science, and a few too m
   border-radius: 8px;
   border-left: 3px solid var(--secondary);
   font-size: 0.9rem;
-  margin-bottom: 1.5rem;
+  margin: 1.5rem 0;
 }
 .formal-toggle {
-  margin-top: 1rem;
+  margin-top: 1.5rem;
+  clear: both;
 }
 .formal-toggle summary {
   cursor: pointer;
@@ -83,7 +75,21 @@ description: "Phan (Valerie) Le — biostatistics, data science, and a few too m
   padding: 1.5rem;
   background: rgba(155, 107, 158, 0.05);
   border-radius: 12px;
-  text-align: left;
+}
+.formal-bio::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.formal-bio .headshot-float {
+  float: right;
+  width: 200px;
+  margin: 0 0 1rem 1.5rem;
+}
+.formal-bio .headshot-float img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(155, 107, 158, 0.2);
 }
 .formal-bio p {
   margin-bottom: 1rem;
@@ -102,26 +108,30 @@ description: "Phan (Valerie) Le — biostatistics, data science, and a few too m
   margin-top: 2rem;
   padding-top: 1rem;
   border-top: 1px solid var(--lightgray);
+  text-align: center;
+}
+@media (max-width: 600px) {
+  .float-image, .formal-bio .headshot-float {
+    float: none;
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto 1.5rem auto;
+    display: block;
+  }
 }
 </style>
 
-<div class="intro-section">
+<div class="bio-section">
 
-<div class="headshot-container">
-<div class="headshot-wrapper">
+<div class="float-image">
 <img src="./static/images/funny1.jpg" alt="Valerie" class="main-img">
 <img src="./static/images/funny2.jpg" alt="Valerie being silly" class="funny-img">
-</div>
-</div>
 <p class="hover-hint">hover for a surprise</p>
-
-<div class="fun-bio">
+</div>
 
 I started out convinced I was going to become a doctor (my mom was very certain of it — thanks, mom), until mathematics and code quietly ruined that plan in the best possible way. Somewhere between biomathematics classes at Rutgers, late-night Jupyter notebooks, and a few too many research rabbit holes, I realized I was more interested in understanding how models think than memorizing what cells do.
 
 These days, I'm a **master's student in Statistics and Data Science at Rutgers University**, working at the intersection of biostatistics, machine learning, and computational neuroscience *(another girl with too many interests, iykyk)*. When I'm not thinking about calibration curves or Monte Carlo uncertainty, you'll probably find me training for a marathon, lifting at the gym, or convincing myself that knitting patterns are just another kind of algorithm.
-
-</div>
 
 <div class="keywords-box">
 
@@ -129,9 +139,15 @@ These days, I'm a **master's student in Statistics and Data Science at Rutgers U
 
 </div>
 
+</div>
+
 <details class="formal-toggle">
 <summary>View Professional Bio</summary>
 <div class="formal-bio">
+
+<div class="headshot-float">
+<img src="./static/images/headshot.jpg" alt="Valerie Le headshot">
+</div>
 
 Valerie Le is a master's student in Statistics - Data Science at Rutgers University. She studies the intersection of **biostatistics, computational neuroscience, and machine learning**, with particular interest in uncertainty quantification, probabilistic modeling, and computational approaches to learning, decision-making, and cognition.
 
@@ -150,8 +166,6 @@ Previously, she completed her B.A.Sc. in Biomathematics at Rutgers, working on p
 
 </div>
 </details>
-
-</div>
 
 ---
 

@@ -53,6 +53,7 @@ ArticleTitle.css = `
   margin: 2rem 0 0 0;
   text-align: center;
   color: var(--dark);
+  width: 100%;
 }
 
 :root[saved-theme="dark"] .article-title {
