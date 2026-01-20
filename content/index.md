@@ -1,7 +1,7 @@
-ï»¿---
+---
 title: "Phan Nguyen Huong Le"
 slug: "index"
-description: "Phan (Valerie) Le â€” biostatistics, data science, and a few too many interests"
+description: "Phan (Valerie) Le — biostatistics, data science, and a few too many interests"
 ---
 
 <style>
@@ -129,13 +129,13 @@ description: "Phan (Valerie) Le â€” biostatistics, data science, and a few too m
 <p class="hover-hint">hover for a surprise</p>
 </div>
 
-I started out convinced I was going to become a doctor (my mom was very certain of it â€” thanks, mom), until mathematics and code quietly ruined that plan in the best possible way. Somewhere between biomathematics classes at Rutgers, late-night Jupyter notebooks, and a few too many research rabbit holes, I realized I was more interested in understanding how models think than memorizing what cells do.
+I started out convinced I was going to become a doctor (my mom was very certain of it — thanks, mom), until mathematics and code quietly ruined that plan in the best possible way. Somewhere between biomathematics classes at Rutgers, late-night Jupyter notebooks, and a few too many research rabbit holes, I realized I was more interested in understanding how models think than memorizing what cells do.
 
 These days, I'm a **master's student in Statistics and Data Science at Rutgers University**, working at the intersection of biostatistics, machine learning, and computational neuroscience *(another girl with too many interests, iykyk)*. When I'm not thinking about calibration curves or Monte Carlo uncertainty, you'll probably find me training for a marathon, lifting at the gym, or convincing myself that knitting patterns are just another kind of algorithm.
 
 <div class="keywords-box">
 
-**Interests:** biostatistics Â· computational neuroscience Â· uncertainty quantification Â· causal inference Â· ML for healthcare
+**Interests:** biostatistics · computational neuroscience · uncertainty quantification · causal inference · ML for healthcare
 
 </div>
 
@@ -175,7 +175,7 @@ Previously, she completed her B.A.Sc. in Biomathematics at Rutgers, working on p
   <img src="./static/running-3.png" alt="Running" style="width: 100%; border-radius: 8px;">
 </div>
 
-Browse through my [Experience](./experience), [Projects](./projects), [Resume](./resume), or learn about my [Life](./life) outside of work.
+Browse through my [Experience](/valerie-site/experience), [Projects](/valerie-site/projects), [Resume](/valerie-site/resume), or learn about my [Life](/valerie-site/life) outside of work.
 
 ---
 

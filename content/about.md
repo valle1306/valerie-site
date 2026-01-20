@@ -1,7 +1,7 @@
-ï»¿---
+---
 title: "Phan Nguyen Huong Le"
 slug: "about"
-description: "Phan (Valerie) Le â€” biostatistics & computational neuroscience"
+description: "Phan (Valerie) Le — biostatistics & computational neuroscience"
 ---
 
 <style>
@@ -52,7 +52,7 @@ Currently, she is working on:
 - **Deep learning pipelines for pediatric brain tumor segmentation** as an Imaging Data Analyst RA at [CHOP (Children's Hospital of Philadelphia)](https://www.chop.edu/) at the [D3b Center](https://d3b.center/) under [Dr. Anahita Fathi Kazerooni](https://d3b.center/team-members/anahita-fathi-kazerooni/)
 <div class="keywords">
 
-**Key interests:** biostatistics Â· computational neuroscience Â· uncertainty quantification Â· causal inference Â· machine learning for healthcare
+**Key interests:** biostatistics · computational neuroscience · uncertainty quantification · causal inference · machine learning for healthcare
 
 </div>
 

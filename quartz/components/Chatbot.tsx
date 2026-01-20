@@ -433,7 +433,7 @@ Chatbot.afterDOMLoaded = `
 <b>Healthcare/Biomedical</b> - brain tumor segmentation, clinical trials, uncertainty quantification<br>
 <b>Finance/Quant</b> - real estate valuation, risk analytics, trading models<br>
 <b>Research</b> - causal inference, psychometrics, behavioral studies<br><br>
-Which area interests you? Or visit the <a href="./projects">Projects page</a> for the full list.\`;
+Which area interests you? Or visit the <a href="/valerie-site/projects">Projects page</a> for the full list.\`;
     }
 
     // === HANDLE FOLLOW-UP FOR PROJECT CATEGORY ===
@@ -533,7 +533,7 @@ Which area interests you? Or visit the <a href="./projects">Projects page</a> fo
         EXPERIENCE.industry.forEach(e => {
           response += \`- <b>\${e.role}</b> at \${e.org}<br>\`;
         });
-        response += '<br>Ask about any specific role for details, or visit the <a href="./experience">Experience page</a>.';
+        response += '<br>Ask about any specific role for details, or visit the <a href="/valerie-site/experience">Experience page</a>.';
         return response;
       }
 
@@ -547,7 +547,7 @@ Which area interests you? Or visit the <a href="./projects">Projects page</a> fo
 - Bristol Myers Squibb Challenge - Bioinformatics<br>
 - IDX Exchange, NYC - Data Science Intern<br>
 - JPMorgan Chase, NYC - Quant Research Mentee<br><br>
-For full details, visit the <a href="./experience">Experience page</a>.\`;
+For full details, visit the <a href="/valerie-site/experience">Experience page</a>.\`;
     }
 
     // === EDUCATION ===
@@ -574,10 +574,10 @@ Rutgers University | Graduated 2024<br><br>
     // === CV/RESUME ===
     if (/cv|resume|download|pdf/.test(q)) {
       return \`<b>Download Valerie's CV:</b><br><br>
-Visit the <a href="./resume">CV page</a> to download:<br>
+Visit the <a href="/valerie-site/resume">CV page</a> to download:<br>
 - Academic CV (PDF)<br>
 - Industry/Masters CV (PDF)<br><br>
-Or view detailed experience on the <a href="./experience">Experience page</a>.\`;
+Or view detailed experience on the <a href="/valerie-site/experience">Experience page</a>.\`;
     }
 
     // === HOBBIES/LIFE ===
@@ -588,17 +588,17 @@ Or view detailed experience on the <a href="./experience">Experience page</a>.\`
 - Knitting<br>
 - Strength training<br>
 - Coffee & matcha exploration<br><br>
-Check out the <a href="./life">Life page</a> for photos and more.\`;
+Check out the <a href="/valerie-site/life">Life page</a> for photos and more.\`;
     }
 
     // === NAVIGATION ===
     if (/page|navigate|where|find|site|menu/.test(q)) {
       return \`<b>Site Navigation:</b><br><br>
 - <a href="./">Home</a> - Overview & intro<br>
-- <a href="./projects">Projects</a> - All research & work<br>
-- <a href="./experience">Experience</a> - Full work history<br>
-- <a href="./resume">CV</a> - Downloadable resumes<br>
-- <a href="./life">Life</a> - Hobbies & personal\`;
+- <a href="/valerie-site/projects">Projects</a> - All research & work<br>
+- <a href="/valerie-site/experience">Experience</a> - Full work history<br>
+- <a href="/valerie-site/resume">CV</a> - Downloadable resumes<br>
+- <a href="/valerie-site/life">Life</a> - Hobbies & personal\`;
     }
 
     // === GREETINGS ===
