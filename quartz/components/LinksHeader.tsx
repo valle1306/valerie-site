@@ -2,11 +2,11 @@ import { pathToRoot } from "../util/path"
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
 
 const links = [
-  { href: "/valerie-site/", label: "Home" },
-  { href: "/valerie-site/projects", label: "Projects" },
-  { href: "/valerie-site/experience", label: "Experience" },
-  { href: "/valerie-site/resume", label: "CV" },
-  { href: "/valerie-site/life", label: "Life" },
+  { href: "/", label: "Home" },
+  { href: "/projects", label: "Projects" },
+  { href: "/experience", label: "Experience" },
+  { href: "/resume", label: "CV" },
+  { href: "/life", label: "Life" },
 ]
 
 export default (() => {
